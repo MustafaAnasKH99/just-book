@@ -27,7 +27,7 @@ export default function InputAppointment() {
   }
   return (
     <div>
-        {response && <div className="decoration-solid text-xl text-lime-300 underline">{response}</div>}
+        {response && <div className="decoration-solid text-xl text-lime-300">{response}</div>}
         <div className="grid w-full gap-2">
             <Textarea onChange={(e) => {setText(e.target.value)}} className='bg-black' placeholder="Ask for an appointment at your convenient time ..." />
             <Button onClick={(e) => handleSend(text)}>Send message</Button>
