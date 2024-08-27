@@ -20,14 +20,15 @@ export default function InputAppointment() {
           body: JSON.stringify({ text }),
       });
       const data = await res.json();
-      setResponse(data['choices'][0]['message']['content']);
+      setResponse(data.choices[0].message.content);
     } catch (error) {
       console.error('Error:', error);
     }
   }
   return (
     <div>
-        {response && <div className="decoration-solid text-xl text-lime-300">{response}</div>}
+        {response && Array.isArray(response) && <div className="decoration-solid text-xl text-lime-300">Appointments available from {response[0]} TO {response[1]}</div>}
+        {response && !Array.isArray(response) && <div className="decoration-solid text-xl text-lime-300">{response}</div>}
         <div className="grid w-full gap-2">
             <Textarea onChange={(e) => {setText(e.target.value)}} className='bg-black' placeholder="Ask for an appointment at your convenient time ..." />
             <Button onClick={(e) => handleSend(text)}>Send message</Button>

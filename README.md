@@ -3,4 +3,6 @@
 ## To do
 - [x] convert text to date
 - [ ] render confirm button
-- [ ] connect to nylas api
+- [x] connect to nylas api
+- [ ] store grant id from route to drizzle db
+

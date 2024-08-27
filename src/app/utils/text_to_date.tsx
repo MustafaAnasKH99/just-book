@@ -1,5 +1,4 @@
 import OpenAI from "openai";
-// import { env } from "~/env";
 import { config } from "../../../config";
 
 const openai = new OpenAI({
